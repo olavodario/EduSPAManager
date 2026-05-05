@@ -20,7 +20,39 @@
             <button id="btnAtualizar" class="btn-atualizar">ATUALIZAR</button>
         </section>
 
-        
+        <p id="mensagem" class="mensagem"></p>
+        <section class="tabela-container">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela">
+                    <!-- Linhas da tabela serão adicionadas dinamicamente via JavaScript -->
+                </tbody>
+            </table>
+        </section>
     </main>
+    <div class="modal" id="modal">
+        <div class="modal-conteudo">
+            <span class="fechar" id="fecharModal">&times;</span>
+            <h2 id="tituloModal">Novo Período</h2>
+
+            <form id="formPeriodo">
+                <input type="hidden" id="idPeriodo">
+
+                <label for="nomePeriodo">Nome:</label>
+                <input type="text" id="nomePeriodo" required>
+
+                <div class="botoes-form">
+                    <button type="submit">SALVAR</button>
+                    <button type="button" id="btnCancelar">CANCELAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
