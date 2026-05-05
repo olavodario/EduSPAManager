@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA11</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- ======================================================
+     CONTAINER PRINCIPAL 
+         ====================================================== -->
+    <main class="container">
+    <!-- Cabeçalho da aplicação -->
+    <header class="cabecalho">
+        <h1>Cadastro de Cursos</h1>
+        <p>Aplicação SPA para gerenciamento de cursos</p>
+    </header>
+
+    <!-- Seção de ações: botão para novo curso -->
+    <section class="acoes">
+        <button id="btnNovo" class="btn-novo">NOVO</button>
+        <button id="btnAtualizar" class="btn-atualizar">ATUALIZAR</button>
+    </section>
+    
+    <!-- Área para exibir mensagens ao usuário -->
+    <p id="mensagem" class="mensagem"></p>
+
+    <!-- Tabela para listar os cursos -->
+    <section class="tabela-container">
+    <table class="tabela">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="corpoTabela">
+            <!-- Linhas da tabela serão adicionadas dinamicamente via JavaScript -->
+        </tbody>
+    </table>
+    </section>
+    </main>
+    <div id="modal" class="modal">
+
+    <div class="modal-conteudo">
+
+        <span id="fecharModal" class="fechar">&times;</span>
+
+        <h2 id="tituloModal">Novo Curso</h2>
+
+        <form id="formCurso">
+
+            <input type="hidden" id="idCurso">
+
+            <label for="nomeCurso">Nome do Curso</label>
+            <input type="text" id="nomeCurso" required>
+
+            <div class="botoes-form">
+                <button type="submit">SALVAR</button>
+                <button type="button" id="btnCancelar">CANCELAR</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="assets/js/curso.js"></script>
+</body>
+</html>

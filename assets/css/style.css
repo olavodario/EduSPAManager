@@ -1,0 +1,331 @@
+/* =========================================================
+   VARIÁVEIS GLOBAIS
+   ========================================================= */
+
+:root {
+    /* FONTES */
+    --fonte-principal: Arial, Helvetica, sans-serif;
+    --tamanho-fonte-padrao: 16px;
+    --tamanho-fonte-fechar: 22px;
+
+    /* CORES */
+    --cor-fundo-body: #f4f6f9;
+    --cor-fundo-container: #ffffff;
+    --cor-texto-padrao: #000000;
+    --cor-texto-branco: #ffffff;
+    --cor-borda-tabela: #dddddd;
+    --cor-fundo-modal: rgba(0, 0, 0, 0.6);
+
+    /* CORES PRINCIPAIS */
+    --cor-primaria: #2c7be5;
+    --cor-primaria-hover: #1a5fb4;
+
+    /* BOTÃO NOVO */
+    --cor-btn-novo-fundo: #28a745;
+    --cor-btn-novo-texto: #ffffff;
+    --cor-btn-novo-borda: #28a745;
+
+    /* BOTÃO ALTERAR */
+    --cor-btn-alterar-fundo: #ffc107;
+    --cor-btn-alterar-texto: #000000;
+    --cor-btn-alterar-borda: #ffc107;
+
+    /* BOTÃO EXCLUIR */
+    --cor-btn-excluir-fundo: #dc3545;
+    --cor-btn-excluir-texto: #ffffff;
+    --cor-btn-excluir-borda: #dc3545;
+
+    /* BOTÃO ATUALIZAR*/
+    --cor-btn-atualizar-fundo: #5435dc;
+    --cor-btn-atualizar-texto: #ffffff;
+    --cor-btn-atualizar-borda: #1d0d5f;    
+
+    /* ESPAÇAMENTOS */
+    --padding-body: 30px;
+    --padding-container: 25px;
+    --padding-botao-vertical: 8px;
+    --padding-botao-horizontal: 15px;
+    --padding-th-td: 10px;
+    --padding-input: 8px;
+    --padding-modal-conteudo: 20px;
+
+    --margin-cabecalho: 20px;
+    --margin-titulo: 10px;
+    --margin-acoes: 15px;
+    --margin-mensagem: 10px;
+    --margin-label: 10px;
+    --margin-input: 5px;
+    --margin-botoes-form: 15px;
+
+    /* DIMENSÕES */
+    --largura-maxima-container: 900px;
+    --largura-modal: 400px;
+    --altura-modal: 100%;
+    --largura-modal-overlay: 100%;
+
+    /* BORDAS */
+    --raio-container: 8px;
+    --raio-botao: 4px;
+    --raio-modal: 6px;
+    --largura-borda-botao: 2px;
+    --largura-borda-tabela: 1px;
+
+    /* POSICIONAMENTO */
+    --top-modal: 0;
+    --left-modal: 0;
+    --top-fechar: 10px;
+    --right-fechar: 15px;
+
+    /* TRANSIÇÕES */
+    --transicao-botao: all 0.3s ease;
+}
+
+
+/* =========================================================
+   RESET BÁSICO
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+    font-family: var(--fonte-principal);
+    font-size: var(--tamanho-fonte-padrao);
+    background-color: var(--cor-fundo-body);
+    color: var(--cor-texto-padrao);
+    padding: var(--padding-body);
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.container {
+    max-width: var(--largura-maxima-container);
+    margin: 0 auto;
+    background-color: var(--cor-fundo-container);
+    padding: var(--padding-container);
+    border-radius: var(--raio-container);
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.cabecalho {
+    text-align: center;
+    margin-bottom: var(--margin-cabecalho);
+}
+
+.cabecalho h1 {
+    margin-bottom: var(--margin-titulo);
+}
+
+
+/* =========================================================
+   ÁREA DE AÇÕES
+   ========================================================= */
+
+.acoes {
+    text-align: right;
+    margin-bottom: var(--margin-acoes);
+}
+
+
+/* =========================================================
+   BOTÕES - PADRÃO
+   ========================================================= */
+
+button {
+    padding: var(--padding-botao-vertical) var(--padding-botao-horizontal);
+    border-radius: var(--raio-botao);
+    cursor: pointer;
+    border: var(--largura-borda-botao) solid transparent;
+    font-weight: bold;
+    transition: var(--transicao-botao);
+    margin: 0px 10px;
+}
+
+
+/* =========================================================
+   BOTÃO NOVO (VERDE)
+   ========================================================= */
+
+.btn-novo {
+    background-color: var(--cor-btn-novo-fundo);
+    color: var(--cor-btn-novo-texto);
+    border-color: var(--cor-btn-novo-borda);
+}
+
+.btn-novo:hover {
+    background-color: var(--cor-fundo-container);
+    color: var(--cor-btn-novo-borda);
+    border-color: var(--cor-btn-novo-borda);
+}
+
+
+/* =========================================================
+   BOTÃO ALTERAR (AMARELO)
+   ========================================================= */
+
+.btn-alterar {
+    background-color: var(--cor-btn-alterar-fundo);
+    color: var(--cor-btn-alterar-texto);
+    border-color: var(--cor-btn-alterar-borda);
+}
+
+.btn-alterar:hover {
+    background-color: var(--cor-fundo-container);
+    color: var(--cor-btn-alterar-borda);
+    border-color: var(--cor-btn-alterar-borda);
+}
+
+
+/* =========================================================
+   BOTÃO EXCLUIR (VERMELHO)
+   ========================================================= */
+
+.btn-excluir {
+    background-color: var(--cor-btn-excluir-fundo);
+    color: var(--cor-btn-excluir-texto);
+    border-color: var(--cor-btn-excluir-borda);
+}
+
+.btn-excluir:hover {
+    background-color: var(--cor-fundo-container);
+    color: var(--cor-btn-excluir-borda);
+    border-color: var(--cor-btn-excluir-borda);
+}
+
+
+/* =========================================================
+   BOTÃO ATUALIZAR
+   ========================================================= */
+
+.btn-atualizar {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-branco);
+    border-color: var(--cor-primaria);
+}
+
+.btn-atualizar:hover {
+    background-color: var(--cor-fundo-container);
+    color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}
+
+
+/* =========================================================
+   MENSAGEM
+   ========================================================= */
+
+.mensagem {
+    text-align: center;
+    margin-bottom: var(--margin-mensagem);
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   TABELA
+   ========================================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: var(--largura-borda-tabela) solid var(--cor-borda-tabela);
+    padding: var(--padding-th-td);
+    text-align: center;
+}
+
+th {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-branco);
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: var(--top-modal);
+    left: var(--left-modal);
+    width: var(--largura-modal-overlay);
+    height: var(--altura-modal);
+    background-color: var(--cor-fundo-modal);
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================================================
+   CONTEÚDO DO MODAL
+   ========================================================= */
+
+.modal-conteudo {
+    background-color: var(--cor-fundo-container);
+    padding: var(--padding-modal-conteudo);
+    width: var(--largura-modal);
+    border-radius: var(--raio-modal);
+    position: relative;
+}
+
+
+/* =========================================================
+   BOTÃO FECHAR
+   ========================================================= */
+
+.fechar {
+    position: absolute;
+    right: var(--right-fechar);
+    top: var(--top-fechar);
+    font-size: var(--tamanho-fonte-fechar);
+    cursor: pointer;
+}
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: var(--margin-label);
+}
+
+input {
+    padding: var(--padding-input);
+    margin-top: var(--margin-input);
+}
+
+
+/* =========================================================
+   BOTÕES DO FORMULÁRIO
+   ========================================================= */
+
+.botoes-form {
+    margin-top: var(--margin-botoes-form);
+    display: flex;
+    justify-content: space-between;
+}
+
