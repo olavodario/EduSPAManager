@@ -10,14 +10,14 @@ const formPeriodo = document.getElementById("formPeriodo");
 const fecharModal = document.getElementById("fecharModal");
 const btnCancelar = document.getElementById("btnCancelar");
 
-//event listeners
+// Event Listeners
 btnAtualizar.addEventListener("click", listarPeriodos);
 btnNovo.addEventListener("click", abrirModalNovo);
 formPeriodo.addEventListener("submit", salvarPeriodo);
 fecharModal.addEventListener("click", fecharJanelaModal);
 btnCancelar.addEventListener("click", fecharJanelaModal);
 
-window.onLoad = listarPeriodos;
+window.onload = listarPeriodos;
 
 function listarPeriodos() {
     corpoTabela.innerHTML = "";
@@ -73,3 +73,76 @@ function criarLinhaTabela(periodo) {
     corpoTabela.appendChild(linha);
 }
 
+function abrirModalNovo() {
+    tituloModal.innerText = "Novo Período";
+    idPeriodoInput.value = "";
+    nomePeriodoInput.value = "";
+    modal.style.display = "flex";
+    nomePeriodoInput.focus();
+}
+
+function abrirModalAlterar(periodo) {
+    tituloModal.innerText = "Alterar Período";
+    idPeriodoInput.value = periodo.IDPERIODO;
+    nomePeriodoInput.value = periodo.NOME;
+    modal.style.display = "flex";
+    nomePeriodoInput.focus();
+}
+
+function fecharJanelaModal() {
+    modal.style.display = "none";
+    formPeriodo.reset();
+}
+
+function salvarPeriodo(evento) {
+    evento.preventDefault();
+    const idPeriodo = idPeriodoInput.value.trim();
+    const nomePeriodo = nomePeriodoInput.value.trim();
+
+    if (nomePeriodo === "") {
+        mensagem.innerText = "O nome do período é obrigatório.";
+        return;
+    }
+
+    const url = idPeriodo === "" ? "assets/php/inserirPeriodos.php" : "assets/php/alterarPeriodos.php";
+    const corpo = new URLSearchParams({ idPeriodo: idPeriodo, nome: nomePeriodo });
+
+    mensagem.innerText = idPeriodo === "" ? "Inserindo período..." : "Alterando período...";
+
+    fetch(url, {
+        method: "POST",
+        body: corpo
+    })
+    .then(resposta => resposta.json())
+    .then(dados => {
+        if (!dados.erro) {
+            fecharJanelaModal();
+            listarPeriodos();
+        }
+        
+    })
+    .catch(erro => {
+        console.error(erro);
+        mensagem.innerText = "Erro ao salvar período.";
+    });
+}
+
+function excluirPeriodo(periodo) {
+    if (confirm(`Deseja realmente excluir o período "${periodo.NOME}"?`)) {
+        mensagem.innerText = "Excluindo período...";
+        fetch("assets/php/excluirPeriodos.php", {
+            method: "POST",
+            body: new URLSearchParams({ idPeriodo: periodo.IDPERIODO })
+        })
+        .then(resposta => resposta.json())
+        .then(dados => {
+            if (!dados.erro) {
+                listarPeriodos();
+            }
+        })
+        .catch(erro => {
+            console.error(erro);
+            mensagem.innerText = "Erro ao excluir período.";
+        });
+    }
+}
