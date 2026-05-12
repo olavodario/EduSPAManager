@@ -120,8 +120,7 @@ function salvarEtapa(evento) {
         mensagem.innerText = dados.mensagem;
         if (!dados.erro) {
             fecharJanelaModal();
-            listarEtapas
-            ();
+            listarEtapas();
         }
     })
     .catch(erro => {
