@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA11 - Alunos</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <main class="container">
+        <header class="cabecalho">
+            <h1>Cadastro de Alunos</h1>
+            <p>Aplicação SPA para gerenciamento escolar</p>
+        </header>
+        <section class="acoes">
+            <button id="btnNovo" class="btn-novo">NOVO</button>
+            <button id="btnAtualizar" class="btn-atualizar">ATUALIZAR</button>
+        </section>
+        <p id="mensagem" class="mensagem"></p>
+        <section class="tabela-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOME</th>
+                        <th>CPF</th>
+                        <th>DATA NASCIMENTO</th>
+                        <th>CURSO</th>
+                        <th>PERÍODO</th>
+                        <th>ETAPA</th>
+                        <th>AÇÕES</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela">
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

@@ -318,6 +318,26 @@ input {
     margin-top: var(--margin-input);
 }
 
+/* =========================================================
+   CAMPOS SELECT
+   ========================================================= */
+
+select {
+    padding: var(--padding-input);
+    margin-top: var(--margin-input);
+    font-family: var(--fonte-principal);
+    font-size: var(--tamanho-fonte-padrao);
+    border: var(--largura-borda-tabela) solid var(--cor-borda-tabela);
+    border-radius: var(--raio-botao);
+    background-color: var(--cor-fundo-container);
+    color: var(--cor-texto-padrao);
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+}
+
 
 /* =========================================================
    BOTÕES DO FORMULÁRIO
